@@ -1,0 +1,109 @@
+@import "tailwindcss";
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+  --primary: #E33413;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #171717;
+    --foreground: #d9d9d9;
+  }
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-inter);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.display,
+.heading {
+  font-family: var(--font-figtree);
+}
+
+h1,
+h3,
+h5,
+.display {
+  font-weight: 900;
+  color: var(--primary);
+  line-height: 95%;
+}
+
+h1 {
+  font-size: clamp(3.5rem, 9vw, 6rem);
+}
+
+.display {
+  font-size: clamp(3rem, 9vw, 6rem);
+}
+
+h5 {
+  font-size: 24px;
+}
+
+h6 {
+  font-size: 20px;
+}
+
+h4 {
+  font-size: 48px;
+  font-weight: 300;
+  line-height: 95%;
+}
+
+h3 {
+  font-size: 32px;
+  color: var(--foreground);
+}
+
+.heroIcon {
+  background-color: #d9d9d9;
+  border-radius: 100%;
+  width: 44px;
+  height: 44px;
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  cursor: pointer;
+  transition: background-color 0.4s, background-image 0.4s;
+}
+
+.heroLinkedin {
+  background-image: url(/linkedin.svg);
+}
+.heroLinkedin:hover {
+  background-image: url(/linkedin-w.svg);
+  background-color: #E33413;
+}
+.heroResume {
+  background-image: url(/resume.svg);
+}
+.heroResume:hover {
+  background-image: url(/resume-w.svg);
+  background-color: #E33413;
+}
+
+.heroWpp {
+  background-image: url(/wpp.svg);
+}
+.heroWpp:hover {
+  background-image: url(/wpp-w.svg);
+  background-color: #E33413;
+}
+
+#heroImage {
+  background-image: url(/heroImage.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}

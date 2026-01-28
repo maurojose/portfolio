@@ -6,12 +6,11 @@
   --primary: #E33413;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #171717;
-    --foreground: #d9d9d9;
-  }
+:root {
+  --background: #171717;
+  --foreground: #d9d9d9;
 }
+
 
 body {
   background: var(--background);
@@ -81,13 +80,16 @@ h3 {
 .heroLinkedin {
   background-image: url(/linkedin.svg);
 }
+
 .heroLinkedin:hover {
   background-image: url(/linkedin-w.svg);
   background-color: #E33413;
 }
+
 .heroResume {
   background-image: url(/resume.svg);
 }
+
 .heroResume:hover {
   background-image: url(/resume-w.svg);
   background-color: #E33413;
@@ -96,6 +98,7 @@ h3 {
 .heroWpp {
   background-image: url(/wpp.svg);
 }
+
 .heroWpp:hover {
   background-image: url(/wpp-w.svg);
   background-color: #E33413;

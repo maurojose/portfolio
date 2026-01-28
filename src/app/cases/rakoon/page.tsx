@@ -22,29 +22,29 @@ export default function Case() {
                     src={"/rakoon_intro.jpg"}
                     alt={'Rakoon.fun UI'}
                     fill
-                    sizes="(max-width: 768px) 100vw, 50vw"
+                    sizes="(max-width: 768px) 100vw, 50vw rounded-lg"
                     className="object-cover"
                     priority
                 />
             </div>
             <StatsGrid>
                 <StatsCard
-                    icon="linkedin-w.svg"
+                    icon="transaction.svg"
                     value="$ 50.000"
                     label="Total transaction volume"
                 />
                 <StatsCard
-                    icon="linkedin-w.svg"
+                    icon="rocket.svg"
                     value="200+"
                     label="Launched tokens"
                 />
                 <StatsCard
-                    icon="linkedin-w.svg"
+                    icon="wallet.svg"
                     value="~600"
                     label="Unique active wallets"
                 />
                 <StatsCard
-                    icon="linkedin-w.svg"
+                    icon="people.svg"
                     value="400"
                     label="Members on community"
                 />
@@ -54,7 +54,7 @@ export default function Case() {
                 timeline="4 months"
                 contributions={contributions}
                 ctaText="Visit dapp"
-                ctaLink="#"
+                ctaLink="http://rakoon.fun"
             />
             <Paragraph title="Overview" text={`Rakoon.fun is a launchpad designed to empower Web3 communities by providing accessible, and engaging memecoin launches. I'm responsable for shaping the platform’s branding, designing the user interface and contribute to product strategy and community engagement.`} />
             <Paragraph

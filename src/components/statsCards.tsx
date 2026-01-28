@@ -38,7 +38,7 @@ export function StatsGrid({ children }: StatsGridProps) {
     return (
         <section className="w-full">
             <div className="container mx-auto">
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+                <div className="flex flex-col md:flex-row justify-center gap-4">
                     {children}
                 </div>
             </div>

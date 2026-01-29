@@ -76,7 +76,7 @@ export default function Home() {
         <div id="heroIcons" className="flex flex-row justify-center md:justify-start gap-[8px]">
           <a href="https://linkedin.com/in/maurojose" target="_blank" rel="noopener noreferrer" className="heroIcon heroLinkedin"></a>
           <a href="https://wa.me/5512988147485" target="_blank" rel="noopener noreferrer" className="heroIcon heroWpp"></a>
-          <a href="/seu-resume.pdf" download className="heroIcon heroResume"></a>
+          <a href="/MauroJoseSoares_ProductDesigner_EN.pdf" download className="heroIcon heroResume"></a>
         </div>
       </div>
     </div>

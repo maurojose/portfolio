@@ -18,7 +18,14 @@ export default function Home() {
             <p className="text-center md:text-start text-[24px]">Product Designer and former Art Director, combining visual excellence, UX thinking, and hands-on execution</p>
           </div>
         </div>
-        <div id="heroImage" className="w-full h-[224px] md:h-[416px]">
+        <div className="h-[224px] md:h-[416px] w-full relative">
+          <Image
+            src={'/pixel.png'}
+            alt={'.MJ.'}
+            fill
+            className="object-cover"
+            priority
+          />
         </div>
       </main>
       <div id="cases" className="flex flex-col gap-[48px] w-full items-center pb-8">

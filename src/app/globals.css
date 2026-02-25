@@ -104,9 +104,3 @@ h3 {
   background-color: #E33413;
 }
 
-#heroImage {
-  background-image: url(/heroImage.png);
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-}

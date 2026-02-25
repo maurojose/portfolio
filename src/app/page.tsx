@@ -20,7 +20,7 @@ export default function Home() {
         </div>
         <div className="h-[224px] md:h-[416px] w-full relative">
           <Image
-            src={'/pixel.png'}
+            src={'/Pixel.png'}
             alt={'.MJ.'}
             fill
             className="object-cover"

@@ -1,92 +1,174 @@
-import { Card } from "@/components/card";
-import { Case } from "@/components/case";
 import Image from "next/image";
+import { ArrowDownCircle } from "lucide-react";
+import { PillButton } from "@/components/pillButton";
+import { SectionTitle } from "@/components/sectionTitle";
+import { WorkCard } from "@/components/workCard";
+import { HowIWork } from "@/components/howIWork";
+import { MyLab } from "@/components/myLab";
+import { AchievementCard } from "@/components/achievementCard";
+import { DotField } from "@/components/dotField";
 
+const WHATSAPP = "https://wa.me/5512988147485";
 
 export default function Home() {
   return (
-    <div className="flex flex-col items-center justify-center min-h-[360px] w-full max-w-7xl self-center px-[16px] md:px-[24px]">
-      <main className="flex flex-col md:flex-row gap-[24px] w-full h-[calc(100vh-64px)] items-center">
-        <div id="heroItems" className="flex flex-col max-w-[360px] gap-[16px]">
-          <div id="heroIcons" className="flex flex-row justify-center md:justify-start gap-[8px]">
-            <a href="https://linkedin.com/in/maurojose" target="_blank" rel="noopener noreferrer" className="heroIcon heroLinkedin"></a>
-            <a href="https://wa.me/5512988147485" target="_blank" rel="noopener noreferrer" className="heroIcon heroWpp"></a>
-            <a href="/MauroJoseSoares_ProductDesigner_EN.pdf" download className="heroIcon heroResume"></a>
-          </div>
-          <div id="heroText">
-            <h1 className="pb-[6px] text-center md:text-start">HI, I'M MAURO</h1>
-            <p className="text-center md:text-start text-[24px]">Product Designer and former Art Director, combining visual excellence, UX thinking, and hands-on execution</p>
-          </div>
-        </div>
-        <div className="h-[224px] md:h-[416px] w-full relative">
-          <Image
-            src={'/Pixel.png'}
-            alt={'.MJ.'}
-            fill
-            className="object-cover"
-            priority
+    <div className="flex flex-col items-center w-full">
+      <section className="relative flex flex-col justify-center w-full min-h-screen overflow-hidden">
+        <div className="absolute inset-0 -z-10">
+          <DotField
+            dotRadius={1.5}
+            dotSpacing={18}
+            bulgeStrength={10}
+            glowRadius={180}
+            sparkle
+            gradientFrom="rgba(226, 52, 19, 0.3)"
+            gradientTo="#E33413"
+            glowColor="color-mix(in srgb, var(--background) 10%, transparent)"
           />
         </div>
-      </main>
-      <div id="cases" className="flex flex-col gap-[48px] w-full items-center pb-8">
-        <h3 className="uppercase">What I've been working on:</h3>
-        <div className="flex flex-col gap-[64px] w-full">
-          <Case
-            image='rakoonCover.png'
-            name='rakoon.fun'
-            text='Making Token launch as easy as possible'
-            link='/cases/rakoon'
-            reverse={false}
-          />
-          <Case
-            image='dexterCover.png'
-            name='DeXter'
-            text='Enhancing the trading experience on Radix'
-            link='/cases/dexter'
-            reverse={true}
-          />
-        </div>
-      </div>
-      <div id='aboutMe' className="flex flex-col gap-[48px] w-full max-w-[896px] items-center py-8 my-12">
-        <span className="display">ABOUT ME</span>
-        <div className="flex flex-col-reverse md:flex-row gap-[48px] w-full items-center">
-          <p className="w-full">
-            Product Designer with extensive visual expertise developed over 14 years of design experience and a strong foundation in web development.
-
-            <br /><br />I began and built my professional path in communication agencies, working as an art director for brands across various sectors, including major names such as Ahlstrom-Munksjö, Akzonobel, Johnson & Johnson, and NSG. In addition, I worked independently on visual and web development projects, with recognized and award-winning work.
-
-            <br /><br />I am currently focused on designing and developing products for the web, web3, and AI.
-          </p>
-          <div id='aboutMeImage' className="w-full max-w-[480px] aspect-square relative">
+        <div className="absolute inset-x-0 bottom-0 h-64 md:h-80 bg-gradient-to-b from-transparent to-[var(--background)] pointer-events-none" />
+        <div className="relative z-10 flex flex-col md:flex-row items-center gap-6 md:gap-10 lg:gap-12 w-full md:max-w-[1200px] mx-auto px-[24px] md:px-[48px] lg:px-[96px]">
+          <div className="relative order-1 md:order-2 w-full max-w-[220px] sm:max-w-[280px] md:max-w-none md:basis-3/5 aspect-square shrink-0">
             <Image
-              src="/aboutmeImage.png"
-              alt="Mauro José, product designer"
+              src="/newHero.png"
+              alt="Dashboard and design system illustration"
               fill
-              sizes="(max-width: 698px) 100vw, 50vw"
-              className="object-cover"
+              sizes="(max-width: 768px) 50vw, 60vw"
+              className="object-contain"
+              priority
             />
           </div>
+          <div className="flex flex-col gap-2 order-2 md:order-1 w-full md:basis-2/5 items-center md:items-start">
+            <div className="flex flex-col gap-3 items-center md:items-start w-full">
+              {/* <p className="heading text-[32px] md:text-[48px] text-[#d9d9d9] text-center md:text-left w-full">Hi!, I&apos;m Mauro José.</p> */}
+              <p className="heading font-black text-[28px] sm:text-[38px] md:text-[44px] lg:text-[52px] text-center md:text-left uppercase leading-[95%] max-w-[560px] w-full">
+                <span className="text-[var(--primary)]">From product thinking</span><span className="text-[var(--neutral-2)]"> to working product.</span>
+              </p>
+            </div>
+            <div className="flex flex-col gap-5 md:gap-6 items-center md:items-start w-full max-w-[560px] mt-2 md:mt-3">
+              <p className="heading  text-[#d9d9d9] text-[15px] sm:text-[16px] md:text-[18px] w-full text-center md:text-left">
+                <span className="text-[var(--primary)] font-bold">Hi, I’m Mauro José,</span> a Product Designer working from discovery to delivery, using research, rapid prototyping and AI-assisted workflows.
+              </p>
+              <div className="flex flex-wrap gap-[12px] w-full items-center justify-center md:justify-start">
+                <PillButton href="#selectedWork" variant="outline" external={false}>
+                  Explore my work
+                </PillButton>
+                <PillButton href={WHATSAPP}>talk to me</PillButton>
+              </div>
+            </div>
+          </div>
         </div>
+      </section>
 
-      </div>
-      <div id="achievements" className="flex flex-col gap-[48px] w-full items-center py-8">
-        <h3 className="uppercase">Achievements and awards:</h3>
-        <div className="flex flex-col md:flex-row w-full gap-[32px]">
-          <Card image={"astro.png"} sub={"1st Place"} name={"Astrolescent Hackathon (Radix DLT)"} text={`Built AI-powered crypto assistant using real DeFi data. It was recognized as best AI + DeFi solution.`} />
-          <Card image={"spain.png"} sub={"5th Place"} name={"European Blockchain Hackathon (Radix DLT) "} text={"Developed launch platform with international multidisciplinary team."} />
-          <Card image={"trofeu.png"} sub={"Graphic Project of the Year"} name={"National Catholic Music Award"} text={"Designed an award-winning album visual identity and complete graphic project for a catholic rock band."} />
-        </div>
-      </div>
-      <div id='callMe' className="flex flex-col gap-[48px] w-full max-w-[896px] items-start h-[100vh] justify-center">
-        <span className="display uppercase">i love developing ideas.</span>
-        <h3>And would love to hear yours. <a href="https://wa.me/5512988147485" target="_blank" rel="noopener noreferrer" className="hover:text-[var(--primary)] underline underline-offset-8">Let's talk</a></h3>
-        <div id="heroIcons" className="flex flex-row justify-center md:justify-start gap-[8px]">
-          <a href="https://linkedin.com/in/maurojose" target="_blank" rel="noopener noreferrer" className="heroIcon heroLinkedin"></a>
-          <a href="https://wa.me/5512988147485" target="_blank" rel="noopener noreferrer" className="heroIcon heroWpp"></a>
-          <a href="/MauroJoseSoares_ProductDesigner_EN.pdf" download className="heroIcon heroResume"></a>
+      <div className="flex flex-col items-center w-full max-w-[1400px] gap-[72px] md:gap-[96px] px-[24px] md:px-[48px] lg:px-[96px] pb-[96px]">
+        <section id="selectedWork" className="flex flex-col gap-[36px] items-center w-full">
+          <SectionTitle>Selected work</SectionTitle>
+          <div className="flex flex-col gap-[24px] w-full">
+            <WorkCard
+              eyebrow="rakoon.fun"
+              title="Making Token Launch as easy as possible"
+              image="rakoonCover.png"
+              ctaText="View case"
+              ctaLink="/cases/rakoon"
+            />
+            <WorkCard
+              eyebrow="dEXTER"
+              title="Enhancing the trading experience on Radix"
+              image="dexterCover.png"
+              ctaText="View case"
+              ctaLink="/cases/dexter"
+              reverse
+            />
+            <WorkCard
+              eyebrow="Ciera genomics"
+              title="Designing the Patient Journey"
+              image="ciera_genomics.png"
+              status="Available soon"
+            />
+          </div>
+          {/* <PillButton href="#" variant="outline" external={false} icon={<ArrowDownCircle size={20} />}>
+            Load more
+          </PillButton> */}
+        </section>
+
+        <HowIWork />
+
+        <MyLab />
+
+        <section id="achievements" className="flex flex-col gap-[36px] items-start w-full">
+          <SectionTitle>Achievments</SectionTitle>
+          <div className="flex flex-col md:flex-row gap-[24px] items-start w-full">
+            <AchievementCard
+              image="astro.png"
+              place="1st Place (2025)"
+              title="Astrolescent Hackathon (Radix DLT)"
+              bullets={["Built AI-powered crypto assistant using real DeFi data.", "Recognized as best AI + DeFi solution."]}
+            />
+            <AchievementCard
+              image="spain.png"
+              place="5th Place (2024)"
+              title="European Blockchain Hackathon (Radix DLT)"
+              bullets={["Developed launch platform with international multidisciplinary team."]}
+            />
+            <AchievementCard
+              image="trofeu.png"
+              place="Graphic Project of the Year (2017)"
+              title="National Catholic Music Award"
+              bullets={["Graphic Project for a Catholic Rock band.", "Designed album visual identity and complete graphic project."]}
+            />
+          </div>
+        </section>
+
+        <section id="aboutMe" className="flex flex-col gap-[36px] items-start w-full">
+          <SectionTitle>about me</SectionTitle>
+          <div className="flex flex-col md:flex-row gap-[24px] items-center w-full">
+            <p className="flex-1 min-w-[280px] text-[16px] md:text-[20px] leading-[150%]">
+              I’m a designer with 14 years of experience spanning visual design, digital products, and web development.
+              <br /><br />I began my career in advertising and art direction, where I built a strong foundation in visual craft, communication, and brand thinking while working with global companies such as Johnson & Johnson, AkzoNobel, and NSG.
+              <br /><br />Over time, my growing interest in technology and problem-solving led me from designing for brands to designing and building for the web.
+              <br /><br />Today, I work across the full product lifecycle — from discovery and interaction design to rapid prototyping and implementation — with a particular interest in AI, emerging interfaces, and the intersection of design and engineering.</p>
+            <div className="flex-1 min-w-[280px] aspect-square w-full relative rounded-[16px] overflow-hidden">
+              <Image
+                src="/aboutMeNew.png"
+                alt="Mauro José, product designer"
+                fill
+                sizes="(max-width: 768px) 100vw, 50vw"
+                className="object-cover"
+              />
+            </div>
+          </div>
+        </section>
+
+        <section
+          id="contact"
+          className="relative overflow-hidden bg-[var(--card)] border-[1.3px] border-[var(--card-border)] flex flex-col gap-[24px] items-center justify-center min-h-[280px] md:min-h-[348px] p-[16px] md:p-[48px] rounded-[16px] w-full"
+        >
+          <div className="absolute inset-0">
+            <DotField
+              dotRadius={1.5}
+              dotSpacing={18}
+              bulgeStrength={10}
+              glowRadius={180}
+              gradientFrom="rgba(226, 52, 19, 0.3)"
+              gradientTo="#E33413"
+              glowColor="color-mix(in srgb, var(--card) 10%, transparent)"
+            />
+          </div>
+          <div className="relative z-10 flex flex-col gap-[12px] items-center text-center">
+            <p className="heading font-black text-[var(--primary)] text-[24px] md:text-[32px] uppercase">
+              Let’s turn the next idea into a working product.
+            </p>
+            <p className="heading font-bold text-[#d9d9d9] text-[20px] md:text-[24px]">Let&apos;s explore it.</p>
+          </div>
+          <PillButton href={WHATSAPP} size="lg" className="relative z-10">
+            Get in touch
+          </PillButton>
+        </section>
+
+        <div className="relative h-[66px] w-[113px] md:h-[113px] md:w-[193px]">
+          <Image src="/LOGO_MJOTA.svg" alt=".MJ." fill />
         </div>
       </div>
     </div>
-
   );
 }

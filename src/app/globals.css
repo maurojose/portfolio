@@ -1,5 +1,9 @@
 @import "tailwindcss";
 
+html {
+  scroll-padding-top: 96px;
+}
+
 :root {
   --background: #ffffff;
   --foreground: #171717;
@@ -7,8 +11,10 @@
 }
 
 :root {
-  --background: #171717;
+  --background: #030e1a;
   --foreground: #d9d9d9;
+  --card: #05192e;
+  --card-border: #082545;
 }
 
 
@@ -66,41 +72,36 @@ h3 {
 }
 
 .heroIcon {
-  background-color: #d9d9d9;
+  background-color: var(--card);
+  border: 1.3px solid var(--card-border);
   border-radius: 100%;
   width: 44px;
   height: 44px;
   background-position: center;
-  background-size: contain;
+  background-size: 80%;
   background-repeat: no-repeat;
   cursor: pointer;
-  transition: background-color 0.4s, background-image 0.4s;
+  transition: background-color 0.4s, border-color 0.4s;
+}
+
+.heroIcon:hover {
+  background-color: #E33413;
+  border-color: #E33413;
 }
 
 .heroLinkedin {
-  background-image: url(/linkedin.svg);
-}
-
-.heroLinkedin:hover {
   background-image: url(/linkedin-w.svg);
-  background-color: #E33413;
 }
 
 .heroResume {
-  background-image: url(/resume.svg);
-}
-
-.heroResume:hover {
   background-image: url(/resume-w.svg);
-  background-color: #E33413;
 }
 
 .heroWpp {
-  background-image: url(/wpp.svg);
+  background-image: url(/wpp-w.svg);
 }
 
-.heroWpp:hover {
-  background-image: url(/wpp-w.svg);
-  background-color: #E33413;
+.heroMail {
+  background-image: url(/mail-w.svg);
 }
 

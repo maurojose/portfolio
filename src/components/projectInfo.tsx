@@ -1,3 +1,5 @@
+import { PillButton } from "./pillButton";
+
 interface InfoItemProps {
   label: string;
   value: string | string[];
@@ -6,7 +8,7 @@ interface InfoItemProps {
 function InfoItem({ label, value }: InfoItemProps) {
   return (
     <div className="flex flex-col gap-3">
-      <h6 className="text-lg text-[#e33413] uppercase tracking-wide">
+      <h6 className="text-lg text-[var(--primary)] uppercase tracking-wide">
         {label}
       </h6>
       {Array.isArray(value) ? (
@@ -42,7 +44,7 @@ export function ProjectInfo({
   ctaLink 
 }: ProjectInfoProps) {
   return (
-    <section className="w-full border-y border-[#555] py-8 sm:py-12">
+    <section className="w-full border-y-[1.3px] border-[var(--card-border)] py-8 sm:py-12">
       <div className="container mx-auto">
         <div className="flex flex-col lg:flex-row gap-8 lg:gap-12 items-start lg:items-center justify-between">
           <div className="flex flex-col sm:flex-row flex-wrap gap-8 lg:gap-12">
@@ -53,12 +55,9 @@ export function ProjectInfo({
             )}
           </div>
           {ctaText && (
-            <a
-              href={ctaLink || "#"}
-              className="bg-[#e33413] text-[#fff] px-10 py-3 rounded capitalize text-sm text-center hover:bg-[#c42e11] transition-colors w-full md:w-auto"
-            >
+            <PillButton href={ctaLink || "#"} className="w-full md:w-auto">
               {ctaText}
-            </a>
+            </PillButton>
           )}
         </div>
       </div>

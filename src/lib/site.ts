@@ -1,5 +1,5 @@
 const SITE = {
-  url: "https://maurojota.com",
+  url: "https://www.maurojota.com",
   name: "Mauro José",
   fullName: "Mauro José Soares",
   jobTitle: "Product Designer",

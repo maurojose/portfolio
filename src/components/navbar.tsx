@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { PillButton } from "./pillButton";
+import { WhatsappIcon } from "./whatsappIcon";
 import { SITE } from "@/lib/site";
 
 const Navbar = () => {
@@ -31,7 +32,7 @@ const Navbar = () => {
               className="heroIcon heroMail w-[32px] h-[32px] md:w-[44px] md:h-[44px]"
             />
           </div>
-          <PillButton href={SITE.whatsapp} ariaLabel="Talk to Mauro José on WhatsApp">
+          <PillButton href={SITE.whatsapp} ariaLabel="Talk to Mauro José on WhatsApp" icon={<WhatsappIcon />}>
             talk to me
           </PillButton>
         </div>

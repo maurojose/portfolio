@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import { PillButton } from "./pillButton";
 
 type WorkCardProps = {
@@ -14,17 +15,35 @@ type WorkCardProps = {
 const WorkCard = ({ eyebrow, title, image, ctaText, ctaLink, status, reverse }: WorkCardProps) => {
   return (
     <div className={`flex ${reverse ? "md:flex-row-reverse" : "md:flex-row"} flex-col items-center gap-[24px] w-full`}>
-      <div className="flex-1 min-w-[280px] w-full aspect-square relative rounded-[16px] overflow-hidden bg-[rgba(168,168,168,0.2)]">
-        {image && (
-          <Image
-            src={`/${image}`}
-            alt={title}
-            fill
-            sizes="(max-width: 768px) 100vw, 50vw"
-            className="object-cover"
-          />
-        )}
-      </div>
+      {ctaLink ? (
+        <Link
+          href={ctaLink}
+          aria-label={`${ctaText || "View"}: ${eyebrow} — ${title}`}
+          className="group flex-1 min-w-[280px] w-full aspect-square relative rounded-[16px] overflow-hidden bg-[rgba(168,168,168,0.2)] block"
+        >
+          {image && (
+            <Image
+              src={`/${image}`}
+              alt={title}
+              fill
+              sizes="(max-width: 768px) 100vw, 50vw"
+              className="object-cover transition-transform duration-300 group-hover:scale-105"
+            />
+          )}
+        </Link>
+      ) : (
+        <div className="flex-1 min-w-[280px] w-full aspect-square relative rounded-[16px] overflow-hidden bg-[rgba(168,168,168,0.2)]">
+          {image && (
+            <Image
+              src={`/${image}`}
+              alt={title}
+              fill
+              sizes="(max-width: 768px) 100vw, 50vw"
+              className="object-cover"
+            />
+          )}
+        </div>
+      )}
       <div className="flex-1 min-w-[280px] flex flex-col gap-[24px] items-start justify-center w-full p-[8px] md:p-[48px]">
         <div className="flex flex-col gap-[7px] items-start w-full">
           <p className="heading font-black text-[var(--primary)] text-[20px] md:text-[24px] uppercase">{eyebrow}</p>

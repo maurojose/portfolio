@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { PillButton } from "@/components/pillButton";
+import { WhatsappIcon } from "@/components/whatsappIcon";
 import { SectionTitle } from "@/components/sectionTitle";
 import { WorkCard } from "@/components/workCard";
 import { HowIWork } from "@/components/howIWork";
@@ -49,13 +50,13 @@ export default function Home() {
             </div>
             <div className="flex flex-col gap-5 md:gap-6 items-center md:items-start w-full max-w-[560px] mt-2 md:mt-3">
               <p className="heading  text-[#d9d9d9] text-[15px] sm:text-[16px] md:text-[18px] w-full text-center md:text-left">
-                <span className="text-[var(--primary)] font-bold">Hi, I’m Mauro José,</span> a Product Designer working from discovery to delivery, using research, rapid prototyping and AI-assisted workflows.
+                <span className="text-[var(--primary)] font-bold">Hi, I’m Mauro José,</span> a designer with over 14 years of experience in visual, ux and product design. Skilled in taking a design brief to a working product.
               </p>
               <div className="flex flex-wrap gap-[12px] w-full items-center justify-center md:justify-start">
                 <PillButton href="#selectedWork" variant="outline" external={false}>
                   Explore my work
                 </PillButton>
-                <PillButton href={WHATSAPP}>talk to me</PillButton>
+                <PillButton href={WHATSAPP} icon={<WhatsappIcon />}>talk to me</PillButton>
               </div>
             </div>
           </div>
@@ -116,7 +117,7 @@ export default function Home() {
 
         <section id="aboutMe" className="flex flex-col gap-[36px] items-start w-full">
           <SectionTitle>about me</SectionTitle>
-          <div className="flex flex-col md:flex-row gap-[24px] items-center w-full">
+          <div className="flex flex-col md:flex-row gap-[24px] items-start lg:items-center w-full">
             <p className="flex-1 min-w-[280px] text-[16px] md:text-[20px] leading-[150%]">
               I’m a designer with 14 years of experience spanning visual design, digital products, and web development.
               <br /><br />I began my career in advertising and art direction, where I built a strong foundation in visual craft, communication, and brand thinking while working with global companies such as Johnson & Johnson, AkzoNobel, and NSG.
@@ -155,8 +156,8 @@ export default function Home() {
             </h2>
             <p className="heading font-bold text-[#d9d9d9] text-[20px] md:text-[24px]">Let&apos;s explore it.</p>
           </div>
-          <PillButton href={WHATSAPP} size="lg" className="relative z-10">
-            Get in touch
+          <PillButton href={WHATSAPP} size="lg" className="relative z-10" icon={<WhatsappIcon className="w-[20px] h-[20px]" />}>
+            talk to me
           </PillButton>
         </section>
 

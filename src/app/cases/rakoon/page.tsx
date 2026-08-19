@@ -38,7 +38,7 @@ export default function Case() {
     ];
 
     return (
-        <div className="flex flex-col items-center justify-start min-h-[360px] w-full max-w-7xl self-center px-[16px] md:px-[24px] py-[48px] gap-[48px]">
+        <div className="flex flex-col items-center justify-start min-h-[360px] w-full max-w-7xl self-center px-[16px] md:px-[24px] pt-[96px] md:pt-[128px] pb-[48px] gap-[48px]">
             <JsonLd data={caseStudyGraph(study)} />
             <h1 className="text-[48px] font-light leading-[95%]">
                 Making Token launch as easy as possible

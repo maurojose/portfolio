@@ -89,9 +89,13 @@ const HowIWork = () => {
         Every project is unique, so I adapt the process on each one, but the structure is always the same.
       </p>
 
-      {/* Desktop: sticky rail + scroll-linked detail */}
-      <div className="hidden min-[900px]:grid grid-cols-[280px_1fr] gap-[64px] w-full">
-        <nav aria-label="How I work steps" className="sticky top-[96px] self-start">
+      {/* One list of steps. Below 900px it reads as a plain vertical list; at
+          900px+ it becomes the scroll-linked detail column beside a sticky rail. */}
+      <div className="flex flex-col w-full min-[900px]:grid min-[900px]:grid-cols-[280px_1fr] min-[900px]:gap-[64px]">
+        <nav
+          aria-label="How I work steps"
+          className="hidden min-[900px]:block sticky top-[96px] self-start"
+        >
           <ol className="flex flex-col gap-[4px]">
             {STEPS.map((step, index) => {
               const isActive = index === activeIndex;
@@ -121,40 +125,26 @@ const HowIWork = () => {
                   panelRefs.current[index] = el;
                 }}
                 aria-label={`Step ${index + 1} of ${STEPS.length}: ${step.title}`}
-                className={`flex flex-col gap-[8px] justify-center min-h-[30vh] border-t-[1.3px] border-[var(--card-border)] first:border-t-0 transition-opacity duration-300 motion-reduce:transition-none ${isActive ? "opacity-100" : "opacity-40"
+                className={`flex flex-col gap-[8px] py-[24px] first:pt-0 border-t-[1.3px] border-[var(--card-border)] first:border-t-0 transition-opacity duration-300 motion-reduce:transition-none min-[900px]:py-0 min-[900px]:justify-center min-[900px]:min-h-[30vh] ${isActive ? "opacity-100" : "opacity-100 min-[900px]:opacity-40"
                   }`}
               >
-                <span className="heading font-black text-[var(--primary)] text-[64px] leading-[90%] tabular-nums">
+                <span className="heading font-black text-[var(--primary)] text-[32px] min-[900px]:text-[64px] leading-[90%] tabular-nums">
                   {step.number}
                 </span>
                 <div className="flex items-center gap-[8px]">
-                  <step.icon size={20} className="shrink-0 text-[var(--primary)]" aria-hidden="true" />
-                  <p className="heading font-bold text-[#d9d9d9] text-[22px] uppercase">{step.title}</p>
+                  <step.icon
+                    size={20}
+                    aria-hidden="true"
+                    className="shrink-0 text-[var(--primary)] w-[18px] h-[18px] min-[900px]:w-[20px] min-[900px]:h-[20px]"
+                  />
+                  <h3 className="heading font-bold text-[#d9d9d9] text-[20px] min-[900px]:text-[22px] uppercase">{step.title}</h3>
                 </div>
-                <p className="text-[16px] text-[#919ca8] leading-[150%] max-w-[480px]">{step.description}</p>
+                <p className="text-[16px] text-[#919ca8] leading-[150%] max-w-none min-[900px]:max-w-[480px]">{step.description}</p>
               </li>
             );
           })}
         </ol>
       </div>
-
-      {/* Mobile: plain vertical list, no sticky/scroll interaction */}
-      <ol className="flex flex-col w-full min-[900px]:hidden">
-        {STEPS.map((step, index) => (
-          <li
-            key={step.number}
-            aria-label={`Step ${index + 1} of ${STEPS.length}: ${step.title}`}
-            className="flex flex-col gap-[8px] py-[24px] border-t-[1.3px] border-[var(--card-border)] first:border-t-0 first:pt-0"
-          >
-            <span className="heading font-black text-[var(--primary)] text-[32px] leading-[90%] tabular-nums">{step.number}</span>
-            <div className="flex items-center gap-[8px]">
-              <step.icon size={18} className="shrink-0 text-[var(--primary)]" aria-hidden="true" />
-              <p className="heading font-bold text-[#d9d9d9] text-[20px] uppercase">{step.title}</p>
-            </div>
-            <p className="text-[16px] text-[#919ca8] leading-[150%]">{step.description}</p>
-          </li>
-        ))}
-      </ol>
     </section>
   );
 };

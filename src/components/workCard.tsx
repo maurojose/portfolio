@@ -29,10 +29,10 @@ const WorkCard = ({ eyebrow, title, image, ctaText, ctaLink, status, reverse }: 
         <div className="flex flex-col gap-[7px] items-start w-full">
           <p className="heading font-black text-[var(--primary)] text-[20px] md:text-[24px] uppercase">{eyebrow}</p>
           <div className="bg-[var(--primary)] h-[11px] w-[15.5px]" />
-          <p className="heading font-light text-[#d9d9d9] text-[32px] md:text-[48px] leading-[105%]">{title}</p>
+          <h3 className="heading font-light text-[#d9d9d9] text-[32px] md:text-[48px] leading-[105%]">{title}</h3>
         </div>
         {ctaText && ctaLink && (
-          <PillButton href={ctaLink} external={false}>
+          <PillButton href={ctaLink} external={false} ariaLabel={`${ctaText}: ${eyebrow} — ${title}`}>
             {ctaText}
           </PillButton>
         )}

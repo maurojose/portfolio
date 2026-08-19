@@ -1,4 +1,5 @@
 import { ReactNode } from "react";
+import Link from "next/link";
 
 type PillButtonProps = {
   href: string;
@@ -8,6 +9,7 @@ type PillButtonProps = {
   icon?: ReactNode;
   className?: string;
   external?: boolean;
+  ariaLabel?: string;
 };
 
 const PillButton = ({
@@ -18,6 +20,7 @@ const PillButton = ({
   icon,
   className = "",
   external = true,
+  ariaLabel,
 }: PillButtonProps) => {
   const variantClasses =
     variant === "filled"
@@ -29,12 +32,28 @@ const PillButton = ({
       ? "h-[48px] px-[16px] py-[12px] text-[20px] font-black"
       : "h-[40px] px-[16px] py-[8px] text-[14px] font-bold";
 
+  const classes = `inline-flex items-center justify-center gap-[10px] rounded-[8px] uppercase text-center whitespace-nowrap transition-colors ${variantClasses} ${sizeClasses} ${className}`;
+
+  // Route links get next/link for prefetch and client-side navigation.
+  // Hash anchors and absolute URLs stay plain anchors.
+  const isRoute = !external && href.startsWith("/");
+
+  if (isRoute) {
+    return (
+      <Link href={href} aria-label={ariaLabel} className={classes}>
+        {children}
+        {icon}
+      </Link>
+    );
+  }
+
   return (
     <a
       href={href}
       target={external ? "_blank" : undefined}
       rel={external ? "noopener noreferrer" : undefined}
-      className={`inline-flex items-center justify-center gap-[10px] rounded-[8px] uppercase text-center whitespace-nowrap transition-colors ${variantClasses} ${sizeClasses} ${className}`}
+      aria-label={ariaLabel}
+      className={classes}
     >
       {children}
       {icon}

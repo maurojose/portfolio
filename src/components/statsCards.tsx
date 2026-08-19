@@ -13,7 +13,8 @@ export function StatsCard({ icon, value, label }: StatsCardProps) {
             <div className="flex items-center justify-center w-10 h-10 shrink-0">
                 <Image
                     src={`/${icon}`}
-                    alt={`/${label}`}
+                    alt=""
+                    aria-hidden="true"
                     width={48}
                     height={48}
                 />
@@ -36,7 +37,7 @@ interface StatsGridProps {
 
 export function StatsGrid({ children }: StatsGridProps) {
     return (
-        <section className="w-full">
+        <section aria-label="Project outcomes" className="w-full">
             <div className="container mx-auto">
                 <div className="flex flex-col md:flex-row justify-center gap-4">
                     {children}

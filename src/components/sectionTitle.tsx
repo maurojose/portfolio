@@ -10,7 +10,7 @@ const SectionTitle = ({ children }: SectionTitleProps) => {
       <div className="relative shrink-0 size-[22px]">
         <Image src="/section-icon.svg" alt="" fill />
       </div>
-      <h3 className="uppercase text-[24px] md:text-[32px]">{children}</h3>
+      <h2 className="uppercase font-black leading-[95%] text-[24px] md:text-[32px]">{children}</h2>
     </div>
   );
 };

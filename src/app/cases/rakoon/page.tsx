@@ -1,8 +1,33 @@
+import type { Metadata } from "next";
 import Image from "next/image";
 import { StatsGrid, StatsCard } from "@/components/statsCards";
 import { ProjectInfo } from "@/components/projectInfo";
 import { Paragraph } from "@/components/paragraph";
+import { JsonLd } from "@/components/jsonLd";
+import { caseStudyGraph } from "@/lib/jsonLd";
+import { caseStudyBySlug } from "@/lib/site";
 
+const study = caseStudyBySlug("rakoon")!;
+
+export const metadata: Metadata = {
+    title: `${study.eyebrow} — ${study.title}`,
+    description: study.description,
+    keywords: study.keywords,
+    alternates: { canonical: `/cases/${study.slug}` },
+    openGraph: {
+        type: "article",
+        url: `/cases/${study.slug}`,
+        title: `${study.eyebrow} — ${study.title}`,
+        description: study.description,
+        publishedTime: study.publishedTime,
+        modifiedTime: study.modifiedTime,
+    },
+    twitter: {
+        card: "summary_large_image",
+        title: `${study.eyebrow} — ${study.title}`,
+        description: study.description,
+    },
+};
 
 export default function Case() {
 
@@ -14,15 +39,16 @@ export default function Case() {
 
     return (
         <div className="flex flex-col items-center justify-start min-h-[360px] w-full max-w-7xl self-center px-[16px] md:px-[24px] py-[48px] gap-[48px]">
-            <h4>
+            <JsonLd data={caseStudyGraph(study)} />
+            <h1 className="text-[48px] font-light leading-[95%]">
                 Making Token launch as easy as possible
-            </h4>
+            </h1>
             <div className="flex relative w-full aspect-video">
                 <Image
                     src={"/rakoon_intro.jpg"}
-                    alt={'Rakoon.fun UI'}
+                    alt={'Rakoon.fun token launchpad interface'}
                     fill
-                    sizes="(max-width: 768px) 100vw, 50vw rounded-lg"
+                    sizes="(max-width: 1280px) 100vw, 1280px"
                     className="object-cover"
                     priority
                 />
@@ -54,7 +80,7 @@ export default function Case() {
                 timeline="4 months"
                 contributions={contributions}
                 ctaText="Visit dapp"
-                ctaLink="http://rakoon.fun"
+                ctaLink={study.liveUrl}
             />
             <Paragraph title="Overview" text={`Rakoon.fun is a launchpad designed to empower Web3 communities by providing accessible, and engaging memecoin launches. I'm responsable for shaping the platform’s branding, designing the user interface and contribute to product strategy and community engagement.`} />
             <Paragraph
@@ -93,7 +119,6 @@ After the hackathon, we opened a Telegram community and kept building based on u
                     width={1061}
                     height={549}
                     className="w-full max-w-[1060px] h-auto"
-                    quality={100}
                 />
             </div>
             <div className="my-12">
@@ -106,11 +131,10 @@ As the visual should be all fun and playful as the meme universe requires, I cre
             <div className="flex relative w-full justify-center">
                 <Image
                     src={"/rakoon_design.png"}
-                    alt={'Rakoon.fun design'}
+                    alt={'Rakoon.fun brand design: the raccoon mascot, logo and colour palette'}
                     width={1060}
                     height={596}
                     className="w-full max-w-[1060px] h-auto"
-                    quality={100}
                 />
             </div>
             <div className="my-12">
@@ -134,11 +158,10 @@ Radix is a small network with low activity, which resulted in a very small user 
             <div className="flex relative w-full justify-center">
                 <Image
                     src={"/rakoon_ui.jpg"}
-                    alt={'Rakoon.fun design'}
+                    alt={'Rakoon.fun interface screens: token creation flow, bonding curve trading and token detail pages'}
                     width={1060}
                     height={1988}
                     className="w-full max-w-[1060px] h-auto"
-                    quality={100}
                 />
             </div>
 
@@ -150,7 +173,6 @@ Radix is a small network with low activity, which resulted in a very small user 
                     width={1060}
                     height={1060}
                     className="w-full max-w-[1060px] h-auto"
-                    quality={100}
                 />
             </div>
 <div className="my-12">

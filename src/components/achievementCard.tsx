@@ -21,7 +21,7 @@ const AchievementCard = ({ image, place, title, bullets }: AchievementCardProps)
       </div>
       <div className="flex flex-col">
         <p className="heading font-bold text-[var(--primary)] text-[20px]">{place}</p>
-        <p className="text-[20px] text-[#d9d9d9]">{title}</p>
+        <h3 className="font-[family-name:var(--font-inter)] text-[20px] text-[#d9d9d9]">{title}</h3>
         <ul className="pt-[8px] text-[10px] text-[#d9d9d9] font-light">
           {bullets.map((b) => (
             <li key={b}>· {b}</li>

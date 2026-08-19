@@ -1,5 +1,4 @@
 import Image from "next/image";
-import { ArrowDownCircle } from "lucide-react";
 import { PillButton } from "@/components/pillButton";
 import { SectionTitle } from "@/components/sectionTitle";
 import { WorkCard } from "@/components/workCard";
@@ -7,12 +6,16 @@ import { HowIWork } from "@/components/howIWork";
 import { MyLab } from "@/components/myLab";
 import { AchievementCard } from "@/components/achievementCard";
 import { DotField } from "@/components/dotField";
+import { JsonLd } from "@/components/jsonLd";
+import { homeGraph } from "@/lib/jsonLd";
+import { SITE, CASE_STUDIES } from "@/lib/site";
 
-const WHATSAPP = "https://wa.me/5512988147485";
+const WHATSAPP = SITE.whatsapp;
 
 export default function Home() {
   return (
     <div className="flex flex-col items-center w-full">
+      <JsonLd data={homeGraph()} />
       <section className="relative flex flex-col justify-center w-full min-h-screen overflow-hidden">
         <div className="absolute inset-0 -z-10">
           <DotField
@@ -31,7 +34,7 @@ export default function Home() {
           <div className="relative order-1 md:order-2 w-full max-w-[220px] sm:max-w-[280px] md:max-w-none md:basis-3/5 aspect-square shrink-0">
             <Image
               src="/newHero.png"
-              alt="Dashboard and design system illustration"
+              alt="Collage of product interfaces designed by Mauro José: dashboards, design system components and mobile screens"
               fill
               sizes="(max-width: 768px) 50vw, 60vw"
               className="object-contain"
@@ -40,10 +43,9 @@ export default function Home() {
           </div>
           <div className="flex flex-col gap-2 order-2 md:order-1 w-full md:basis-2/5 items-center md:items-start">
             <div className="flex flex-col gap-3 items-center md:items-start w-full">
-              {/* <p className="heading text-[32px] md:text-[48px] text-[#d9d9d9] text-center md:text-left w-full">Hi!, I&apos;m Mauro José.</p> */}
-              <p className="heading font-black text-[28px] sm:text-[38px] md:text-[44px] lg:text-[52px] text-center md:text-left uppercase leading-[95%] max-w-[560px] w-full">
+              <h1 className="heading font-black text-[28px] sm:text-[38px] md:text-[44px] lg:text-[52px] text-center md:text-left uppercase leading-[95%] max-w-[560px] w-full">
                 <span className="text-[var(--primary)]">From product thinking</span><span className="text-[var(--neutral-2)]"> to working product.</span>
-              </p>
+              </h1>
             </div>
             <div className="flex flex-col gap-5 md:gap-6 items-center md:items-start w-full max-w-[560px] mt-2 md:mt-3">
               <p className="heading  text-[#d9d9d9] text-[15px] sm:text-[16px] md:text-[18px] w-full text-center md:text-left">
@@ -64,21 +66,17 @@ export default function Home() {
         <section id="selectedWork" className="flex flex-col gap-[36px] items-center w-full">
           <SectionTitle>Selected work</SectionTitle>
           <div className="flex flex-col gap-[24px] w-full">
-            <WorkCard
-              eyebrow="rakoon.fun"
-              title="Making Token Launch as easy as possible"
-              image="rakoonCover.png"
-              ctaText="View case"
-              ctaLink="/cases/rakoon"
-            />
-            <WorkCard
-              eyebrow="dEXTER"
-              title="Enhancing the trading experience on Radix"
-              image="dexterCover.png"
-              ctaText="View case"
-              ctaLink="/cases/dexter"
-              reverse
-            />
+            {CASE_STUDIES.map((study, index) => (
+              <WorkCard
+                key={study.slug}
+                eyebrow={study.eyebrow}
+                title={study.title}
+                image={study.cover.replace("/", "")}
+                ctaText="View case"
+                ctaLink={`/cases/${study.slug}`}
+                reverse={index % 2 === 1}
+              />
+            ))}
             <WorkCard
               eyebrow="Ciera genomics"
               title="Designing the Patient Journey"
@@ -86,9 +84,6 @@ export default function Home() {
               status="Available soon"
             />
           </div>
-          {/* <PillButton href="#" variant="outline" external={false} icon={<ArrowDownCircle size={20} />}>
-            Load more
-          </PillButton> */}
         </section>
 
         <HowIWork />
@@ -96,7 +91,7 @@ export default function Home() {
         <MyLab />
 
         <section id="achievements" className="flex flex-col gap-[36px] items-start w-full">
-          <SectionTitle>Achievments</SectionTitle>
+          <SectionTitle>Achievements</SectionTitle>
           <div className="flex flex-col md:flex-row gap-[24px] items-start w-full">
             <AchievementCard
               image="astro.png"
@@ -155,9 +150,9 @@ export default function Home() {
             />
           </div>
           <div className="relative z-10 flex flex-col gap-[12px] items-center text-center">
-            <p className="heading font-black text-[var(--primary)] text-[24px] md:text-[32px] uppercase">
+            <h2 className="heading font-black text-[var(--primary)] text-[24px] md:text-[32px] uppercase">
               Let’s turn the next idea into a working product.
-            </p>
+            </h2>
             <p className="heading font-bold text-[#d9d9d9] text-[20px] md:text-[24px]">Let&apos;s explore it.</p>
           </div>
           <PillButton href={WHATSAPP} size="lg" className="relative z-10">
@@ -165,9 +160,9 @@ export default function Home() {
           </PillButton>
         </section>
 
-        <div className="relative h-[66px] w-[113px] md:h-[113px] md:w-[193px]">
-          <Image src="/LOGO_MJOTA.svg" alt=".MJ." fill />
-        </div>
+        <footer className="relative h-[66px] w-[113px] md:h-[113px] md:w-[193px]">
+          <Image src="/LOGO_MJOTA.svg" alt="Mauro José" fill />
+        </footer>
       </div>
     </div>
   );

@@ -8,11 +8,11 @@ interface InfoItemProps {
 function InfoItem({ label, value }: InfoItemProps) {
   return (
     <div className="flex flex-col gap-3">
-      <h6 className="text-lg text-[var(--primary)] uppercase tracking-wide">
+      <dt className="heading text-lg text-[var(--primary)] uppercase tracking-wide">
         {label}
-      </h6>
+      </dt>
       {Array.isArray(value) ? (
-        <div className="flex flex-wrap gap-4 sm:gap-6 text-sm text-[#d9d9d9] capitalize">
+        <dd className="flex flex-wrap gap-4 sm:gap-6 text-sm text-[#d9d9d9] capitalize">
           {value.map((item, index) => (
             <div key={index} className="min-w-[80px]">
               {item.split('\n').map((line, i) => (
@@ -20,9 +20,9 @@ function InfoItem({ label, value }: InfoItemProps) {
               ))}
             </div>
           ))}
-        </div>
+        </dd>
       ) : (
-        <p className="text-sm text-[#d9d9d9] capitalize">{value}</p>
+        <dd className="text-sm text-[#d9d9d9] capitalize">{value}</dd>
       )}
     </div>
   );
@@ -44,16 +44,16 @@ export function ProjectInfo({
   ctaLink 
 }: ProjectInfoProps) {
   return (
-    <section className="w-full border-y-[1.3px] border-[var(--card-border)] py-8 sm:py-12">
+    <section aria-label="Project details" className="w-full border-y-[1.3px] border-[var(--card-border)] py-8 sm:py-12">
       <div className="container mx-auto">
         <div className="flex flex-col lg:flex-row gap-8 lg:gap-12 items-start lg:items-center justify-between">
-          <div className="flex flex-col sm:flex-row flex-wrap gap-8 lg:gap-12">
+          <dl className="flex flex-col sm:flex-row flex-wrap gap-8 lg:gap-12">
             {role && <InfoItem label="My Role" value={role} />}
             {timeline && <InfoItem label="Timeline" value={timeline} />}
             {contributions && contributions.length > 0 && (
               <InfoItem label="My Contribution" value={contributions} />
             )}
-          </div>
+          </dl>
           {ctaText && (
             <PillButton href={ctaLink || "#"} className="w-full md:w-auto">
               {ctaText}

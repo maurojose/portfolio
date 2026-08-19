@@ -1,8 +1,33 @@
+import type { Metadata } from "next";
 import Image from "next/image";
 import { StatsGrid, StatsCard } from "@/components/statsCards";
 import { ProjectInfo } from "@/components/projectInfo";
 import { Paragraph } from "@/components/paragraph";
+import { JsonLd } from "@/components/jsonLd";
+import { caseStudyGraph } from "@/lib/jsonLd";
+import { caseStudyBySlug } from "@/lib/site";
 
+const study = caseStudyBySlug("dexter")!;
+
+export const metadata: Metadata = {
+    title: `${study.eyebrow} — ${study.title}`,
+    description: study.description,
+    keywords: study.keywords,
+    alternates: { canonical: `/cases/${study.slug}` },
+    openGraph: {
+        type: "article",
+        url: `/cases/${study.slug}`,
+        title: `${study.eyebrow} — ${study.title}`,
+        description: study.description,
+        publishedTime: study.publishedTime,
+        modifiedTime: study.modifiedTime,
+    },
+    twitter: {
+        card: "summary_large_image",
+        title: `${study.eyebrow} — ${study.title}`,
+        description: study.description,
+    },
+};
 
 export default function Case() {
 
@@ -13,15 +38,16 @@ export default function Case() {
 
     return (
         <div className="flex flex-col items-center justify-start min-h-[360px] w-full max-w-7xl self-center px-[16px] md:px-[24px] py-[48px] gap-[48px]">
-            <h4>
+            <JsonLd data={caseStudyGraph(study)} />
+            <h1 className="text-[48px] font-light leading-[95%]">
                 Enhancing the trading experience on Radix
-            </h4>
+            </h1>
             <div className="flex relative w-full aspect-video">
                 <Image
                     src={"/dexter_intro.jpg"}
-                    alt={'Dexter UI'}
+                    alt={'dEXTER order-book exchange interface on the Radix network'}
                     fill
-                    sizes="(max-width: 768px) 100vw, 50vw"
+                    sizes="(max-width: 1280px) 100vw, 1280px"
                     className="object-cover rounded-xl"
                     priority
                 />
@@ -48,7 +74,7 @@ export default function Case() {
                 timeline="4 months"
                 contributions={contributions}
                 ctaText="Visit dapp"
-                ctaLink="http://dexteronradix.com"
+                ctaLink={study.liveUrl}
             />
             <Paragraph title="Overview" text={`Dexter is a collaborative order book exchange built on the Radix Network. I was responsible for improving the platform’s UX/UI, leading interface redesigns, building a scalable design system, and collaborating closely with the community and developers to shape product decisions.`} />
             <Paragraph
@@ -82,24 +108,22 @@ export default function Case() {
             <div className="flex relative w-full justify-center">
                 <Image
                     src={"/dexter_discover.png"}
-                    alt={'DeXter discovery'}
+                    alt={'dEXTER discovery phase: usability audit findings and clustered community insights'}
                     width={1061}
                     height={549}
                     className="w-full max-w-[1060px] h-auto"
-                    quality={100}
                 />
             </div>
 
-            <h6>INITIAL DESIGN</h6>
+            <h2 className="text-[20px] uppercase">Initial design</h2>
 
             <div className="flex relative w-full justify-center">
                 <Image
                     src={"/dexter_initial.png"}
-                    alt={'Rakoon.fun design'}
+                    alt={'dEXTER initial design: redesigned order form, order book and trading dashboard'}
                     width={1060}
                     height={1988}
                     className="w-full max-w-[1060px] h-auto rounded-lg"
-                    quality={100}
                 />
             </div>
 
@@ -116,11 +140,10 @@ export default function Case() {
             <div className="flex relative w-full justify-center">
                 <Image
                     src={"/dexter_mobile.jpg"}
-                    alt={'dexter mobile version'}
+                    alt={'dEXTER mobile trading interface'}
                     width={1060}
                     height={1988}
                     className="w-full max-w-[1060px] h-auto rounded-lg"
-                    quality={100}
                 />
             </div>
 
@@ -128,22 +151,20 @@ export default function Case() {
             <div className="flex relative w-full justify-center">
                 <Image
                     src={"/dexter_tab.jpg"}
-                    alt={'dexter desktop version'}
+                    alt={'dEXTER tablet trading interface'}
                     width={1060}
                     height={1060}
                     className="w-full max-w-[1060px] h-auto rounded-lg"
-                    quality={100}
                 />
             </div>
 
             <div className="flex relative w-full justify-center">
                 <Image
                     src={"/dexter_desk.jpg"}
-                    alt={'dexter landing page'}
+                    alt={'dEXTER desktop landing page'}
                     width={1060}
                     height={1988}
                     className="w-full max-w-[1060px] h-auto rounded-lg"
-                    quality={100}
                 />
             </div>
         </div>

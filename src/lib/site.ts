@@ -4,7 +4,7 @@ const SITE = {
   fullName: "Mauro José Soares",
   jobTitle: "Product Designer",
   description:
-    "Product Designer with 14 years across visual design, digital products and web development — working from discovery to delivery with research, rapid prototyping and AI-assisted implementation.",
+    "A multidisciplinary designer with 14+ years of experience across visual, UX, and product design. I work across the full design process, from early direction and flows to implementation and delivery.",
   locale: "en_US",
   email: "maurojsoares@gmail.com",
   whatsapp: "https://wa.me/5512988147485",

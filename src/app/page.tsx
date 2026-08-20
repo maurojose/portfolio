@@ -4,6 +4,7 @@ import { WhatsappIcon } from "@/components/whatsappIcon";
 import { SectionTitle } from "@/components/sectionTitle";
 import { WorkCard } from "@/components/workCard";
 import { HowIWork } from "@/components/howIWork";
+import { Experience } from "@/components/experience";
 import { MyLab } from "@/components/myLab";
 import { AchievementCard } from "@/components/achievementCard";
 import { DotField } from "@/components/dotField";
@@ -35,7 +36,7 @@ export default function Home() {
           <div className="relative order-1 md:order-2 w-full max-w-[220px] sm:max-w-[280px] md:max-w-none md:basis-3/5 aspect-square shrink-0">
             <Image
               src="/newHero.png"
-              alt="Collage of product interfaces designed by Mauro José: dashboards, design system components and mobile screens"
+              alt="Illustration of product interfaces: dashboards, design system components and mobile screens"
               fill
               sizes="(max-width: 768px) 50vw, 60vw"
               className="object-contain"
@@ -50,7 +51,7 @@ export default function Home() {
             </div>
             <div className="flex flex-col gap-5 md:gap-6 items-center md:items-start w-full max-w-[560px] mt-2 md:mt-3">
               <p className="heading  text-[#d9d9d9] text-[15px] sm:text-[16px] md:text-[18px] w-full text-center md:text-left">
-                <span className="text-[var(--primary)] font-bold">Hi, I’m Mauro José,</span> a designer with over 14 years of experience in visual, ux and product design. Skilled in taking a design brief to a working product.
+                <span className="text-[var(--primary)] font-bold">Hi, I’m Mauro José,</span> a multidisciplinary designer with 14+ years of experience across visual, UX, and product design. I work across the full design process, from early direction and flows to implementation and delivery.
               </p>
               <div className="flex flex-wrap gap-[12px] w-full items-center justify-center md:justify-start">
                 <PillButton href="#selectedWork" variant="outline" external={false}>
@@ -88,6 +89,8 @@ export default function Home() {
         </section>
 
         <HowIWork />
+
+        <Experience />
 
         <MyLab />
 

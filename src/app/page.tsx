@@ -32,27 +32,26 @@ export default function Home() {
           />
         </div>
         <div className="absolute inset-x-0 bottom-0 h-64 md:h-80 bg-gradient-to-b from-transparent to-[var(--background)] pointer-events-none" />
-        <div className="relative z-10 flex flex-col md:flex-row items-center gap-6 md:gap-10 lg:gap-12 w-full md:max-w-[1200px] mx-auto px-[24px] md:px-[48px] lg:px-[96px]">
-          <div className="relative order-1 md:order-2 w-full max-w-[220px] sm:max-w-[280px] md:max-w-none md:basis-3/5 aspect-square shrink-0">
-            <Image
-              src="/newHero.png"
-              alt="Illustration of product interfaces: dashboards, design system components and mobile screens"
-              fill
-              sizes="(max-width: 768px) 50vw, 60vw"
-              className="object-contain"
-              priority
-            />
-          </div>
-          <div className="flex flex-col gap-2 order-2 md:order-1 w-full md:basis-2/5 items-center md:items-start">
-            <div className="flex flex-col gap-3 items-center md:items-start w-full">
-              <h1 className="heading font-black text-[28px] sm:text-[38px] md:text-[44px] lg:text-[52px] text-center md:text-left uppercase leading-[95%] max-w-[560px] w-full">
-                <span className="text-[var(--primary)]">From product thinking</span><span className="text-[var(--neutral-2)]"> to working product.</span>
-              </h1>
-            </div>
-            <div className="flex flex-col gap-5 md:gap-6 items-center md:items-start w-full max-w-[560px] mt-2 md:mt-3">
-              <p className="heading  text-[#d9d9d9] text-[15px] sm:text-[16px] md:text-[18px] w-full text-center md:text-left">
-                <span className="text-[var(--primary)] font-bold">Hi, I’m Mauro José,</span> a multidisciplinary designer with 14+ years of experience across visual, UX, and product design. I work across the full design process, from early direction and flows to implementation and delivery.
-              </p>
+        <div className="relative z-10 flex flex-col items-center gap-6 w-full md:max-w-[1200px] mx-auto px-[24px] md:px-[48px] lg:px-[96px]">
+          <div className="flex flex-col gap-[48px] w-full items-center">
+            <h1 className="heading font-black text-[28px] sm:text-[38px] md:text-[44px] lg:text-[52px] text-center md:text-left uppercase leading-[95%] max-w-[560px] w-full">
+              <span className="text-[var(--primary)]">From product thinking</span><span className="text-[var(--neutral-2)]"> to working product.</span>
+            </h1>
+            <div className="flex flex-col gap-5 md:gap-12 items-center md:items-start w-full max-w-[560px]">
+              <div className="flex flex-col md:flex-row gap-4 sm:gap-6 items-center w-full">
+                <div className="relative w-[80px] h-[80px] sm:w-[96px] sm:h-[96px] rounded-full overflow-hidden shrink-0 ring-2 ring-[var(--card-border)]">
+                  <Image
+                    src="/aboutMeNew.png"
+                    alt="Mauro José, product designer"
+                    fill
+                    sizes="96px"
+                    className="object-cover"
+                  />
+                </div>
+                <p className="heading  text-[#d9d9d9] text-[15px] sm:text-[16px] md:text-[18px] flex-1 text-center md:text-left">
+                  <span className="text-[var(--primary)] font-bold">Hi, I’m Mauro José,</span> a multidisciplinary designer with 14+ years of experience across visual, UX, and product design. I work across the full design process, from early direction and flows to implementation and delivery.
+                </p>
+              </div>
               <div className="flex flex-wrap gap-[12px] w-full items-center justify-center md:justify-start">
                 <PillButton href="#selectedWork" variant="outline" external={false}>
                   Explore my work

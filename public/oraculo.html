@@ -1773,19 +1773,19 @@
 
     const people = [
       { name: 'Mauro José', role: 'Direção de Arte', squad: 'NSG', cap: 92, jobs: 6, due: 2, initials: 'MJ', skills: ['Branding', 'Digital', 'AI'] },
-      { name: 'Gustavo', role: 'Direção de Arte', squad: 'Unimed', cap: 42, jobs: 2, due: 0, initials: 'AS', skills: ['Social', 'Campaign', 'Motion'] },
-      { name: 'Luis', role: 'Redação', squad: 'NSG', cap: 78, jobs: 5, due: 1, initials: 'PL', skills: ['Copy', 'Concept', 'Social'] },
-      { name: 'Alyne', role: 'Atendimento', squad: 'J&J', cap: 106, jobs: 8, due: 3, initials: 'CN', skills: ['Client', 'Planning'] },
-      { name: 'Bia', role: 'Direção de Arte', squad: 'Goldfinger', cap: 63, jobs: 4, due: 1, initials: 'LC', skills: ['Campaign', 'Digital', 'Branding'] },
-      { name: 'Camila', role: 'Redação', squad: 'Tremembé', cap: 55, jobs: 3, due: 1, initials: 'JA', skills: ['Script', 'Copy', 'Strategy'] }
+      { name: 'Gustavo', role: 'Direção de Arte', squad: 'Unimed', cap: 42, jobs: 2, due: 0, initials: 'GU', skills: ['Social', 'Campaign', 'Motion'] },
+      { name: 'Luis', role: 'Redação', squad: 'NSG', cap: 78, jobs: 5, due: 1, initials: 'LU', skills: ['Copy', 'Concept', 'Social'] },
+      { name: 'Alyne', role: 'Atendimento', squad: 'J&J', cap: 106, jobs: 8, due: 3, initials: 'AL', skills: ['Client', 'Planning'] },
+      { name: 'Bia', role: 'Direção de Arte', squad: 'Goldfinger', cap: 63, jobs: 4, due: 1, initials: 'BI', skills: ['Campaign', 'Digital', 'Branding'] },
+      { name: 'Camila', role: 'Redação', squad: 'Tremembé', cap: 55, jobs: 3, due: 1, initials: 'CA', skills: ['Script', 'Copy', 'Strategy'] }
     ];
 
     const squads = [
-      { name: 'NSG', client: 'NSG Group', cap: 87, jobs: 14, members: ['MJ', 'PL', 'RC'] },
-      { name: 'Unimed', client: 'Unimed', cap: 64, jobs: 9, members: ['AS', 'MB', 'RF'] },
-      { name: 'J&J', client: 'Johnson & Johnson', cap: 108, jobs: 12, members: ['CN', 'FT', 'BG'] },
-      { name: 'Goldfinger', client: 'Goldfinger', cap: 72, jobs: 8, members: ['LC', 'AR', 'GV'] },
-      { name: 'Tremembé', client: 'Prefeitura de Tremembé', cap: 58, jobs: 7, members: ['JA', 'MS', 'TP'] }
+      { name: 'NSG', client: 'NSG Group', cap: 87, jobs: 14, members: ['MJ', 'LU', 'RC'] },
+      { name: 'Unimed', client: 'Unimed', cap: 64, jobs: 9, members: ['GU', 'MB', 'RF'] },
+      { name: 'J&J', client: 'Johnson & Johnson', cap: 108, jobs: 12, members: ['AL', 'FT', 'BG'] },
+      { name: 'Goldfinger', client: 'Goldfinger', cap: 72, jobs: 8, members: ['BI', 'AR', 'GV'] },
+      { name: 'Tremembé', client: 'Prefeitura de Tremembé', cap: 58, jobs: 7, members: ['CA', 'MS', 'TP'] }
     ];
 
     const CLIENT_CODES = squads.map(s => s.name);
@@ -1793,26 +1793,26 @@
     const initialJobs = [
       { id: 1, title: 'KV Café & Conversa', client: 'NSG', owner: 'MJ', size: 'L', priority: 'high', due: 'Hoje', status: 'Criacao', squad: 'NSG' },
       { id: 2, title: 'Carrossel ESG — Ajustes', client: 'NSG', owner: 'MJ', size: 'M', priority: 'medium', due: 'Hoje', status: 'Revisao', squad: 'NSG' },
-      { id: 3, title: 'Campanha Vacinação', client: 'Unimed', owner: 'AS', size: 'L', priority: 'high', due: 'Qua', status: 'Criacao', squad: 'Unimed' },
-      { id: 4, title: 'Manifesto de Marca', client: 'J&J', owner: 'CN', size: 'L', priority: 'medium', due: 'Qui', status: 'Briefing', squad: 'J&J' },
+      { id: 3, title: 'Campanha Vacinação', client: 'Unimed', owner: 'GU', size: 'L', priority: 'high', due: 'Qua', status: 'Criacao', squad: 'Unimed' },
+      { id: 4, title: 'Manifesto de Marca', client: 'J&J', owner: 'AL', size: 'L', priority: 'medium', due: 'Qui', status: 'Briefing', squad: 'J&J' },
       { id: 5, title: 'Adaptação OOH', client: 'NSG', owner: 'MJ', size: 'S', priority: 'low', due: 'Sex', status: 'Entrada', squad: 'NSG' },
-      { id: 6, title: 'Social Kit Agosto', client: 'Goldfinger', owner: 'LC', size: 'M', priority: 'low', due: 'Sex', status: 'Cliente', squad: 'Goldfinger' },
-      { id: 7, title: 'Campanha Aniversário da Cidade', client: 'Tremembé', owner: 'JA', size: 'L', priority: 'high', due: 'Amanhã', status: 'Revisao', squad: 'Tremembé' },
-      { id: 8, title: 'Campanha Segurança', client: 'NSG', owner: 'PL', size: 'L', priority: 'medium', due: 'Qui', status: 'Cliente', squad: 'NSG' },
-      { id: 9, title: 'Newsletter Saúde', client: 'Unimed', owner: 'AS', size: 'S', priority: 'low', due: 'Sex', status: 'Entrada', squad: 'Unimed' },
-      { id: 10, title: 'Deck Institucional', client: 'J&J', owner: 'CN', size: 'M', priority: 'medium', due: 'Qua', status: 'Briefing', squad: 'J&J' },
+      { id: 6, title: 'Social Kit Agosto', client: 'Goldfinger', owner: 'BI', size: 'M', priority: 'low', due: 'Sex', status: 'Cliente', squad: 'Goldfinger' },
+      { id: 7, title: 'Campanha Aniversário da Cidade', client: 'Tremembé', owner: 'CA', size: 'L', priority: 'high', due: 'Amanhã', status: 'Revisao', squad: 'Tremembé' },
+      { id: 8, title: 'Campanha Segurança', client: 'NSG', owner: 'LU', size: 'L', priority: 'medium', due: 'Qui', status: 'Cliente', squad: 'NSG' },
+      { id: 9, title: 'Newsletter Saúde', client: 'Unimed', owner: 'GU', size: 'S', priority: 'low', due: 'Sex', status: 'Entrada', squad: 'Unimed' },
+      { id: 10, title: 'Deck Institucional', client: 'J&J', owner: 'AL', size: 'M', priority: 'medium', due: 'Qua', status: 'Briefing', squad: 'J&J' },
       { id: 11, title: 'Semana do Vidro', client: 'NSG', owner: 'MJ', size: 'XL', priority: 'high', due: 'Sex', status: 'Criacao', squad: 'NSG' },
-      { id: 12, title: 'Campanha Institucional', client: 'Goldfinger', owner: 'LC', size: 'M', priority: 'medium', due: 'Qui', status: 'Criacao', squad: 'Goldfinger' },
-      { id: 13, title: 'Prestação de Contas 2026', client: 'Tremembé', owner: 'JA', size: 'M', priority: 'medium', due: 'Sex', status: 'Briefing', squad: 'Tremembé' }
+      { id: 12, title: 'Campanha Institucional', client: 'Goldfinger', owner: 'BI', size: 'M', priority: 'medium', due: 'Qui', status: 'Criacao', squad: 'Goldfinger' },
+      { id: 13, title: 'Prestação de Contas 2026', client: 'Tremembé', owner: 'CA', size: 'M', priority: 'medium', due: 'Sex', status: 'Briefing', squad: 'Tremembé' }
     ];
 
     const weekWork = [
-      { client: 'NSG Group', title: 'Future of Glass — Employer Branding', tags: ['Campaign', 'OOH', 'Social'], art: 'art-a', span: 'span-7', crew: ['MJ', 'PL', 'RC'], type: 'Campaign' },
-      { client: 'NSG Group', title: 'Café & Conversa', tags: ['Identity', 'Event'], art: 'art-b', span: 'span-5', crew: ['AS', 'PL'], type: 'Branding' },
-      { client: 'Unimed', title: 'Cuidar Faz Bem', tags: ['Campaign', 'Digital'], art: 'art-c', span: 'span-4', crew: ['AS', 'RF'], type: 'Digital' },
-      { client: 'Johnson & Johnson', title: 'Science Meets Care', tags: ['Brand', 'Campaign'], art: 'art-d', span: 'span-8', crew: ['CN', 'BG', 'FT'], type: 'Branding' },
-      { client: 'Goldfinger', title: 'Coleção Primavera', tags: ['Campaign', 'Social'], art: 'art-e', span: 'span-5', crew: ['LC', 'AR'], type: 'Digital' },
-      { client: 'Prefeitura de Tremembé', title: 'Tremembé em Movimento', tags: ['Campaign', 'Public'], art: 'art-f', span: 'span-7', crew: ['JA', 'MS'], type: 'Campaign' }
+      { client: 'NSG Group', title: 'Future of Glass — Employer Branding', tags: ['Campaign', 'OOH', 'Social'], art: 'art-a', span: 'span-7', crew: ['MJ', 'LU', 'RC'], type: 'Campaign' },
+      { client: 'NSG Group', title: 'Café & Conversa', tags: ['Identity', 'Event'], art: 'art-b', span: 'span-5', crew: ['GU', 'LU'], type: 'Branding' },
+      { client: 'Unimed', title: 'Cuidar Faz Bem', tags: ['Campaign', 'Digital'], art: 'art-c', span: 'span-4', crew: ['GU', 'RF'], type: 'Digital' },
+      { client: 'Johnson & Johnson', title: 'Science Meets Care', tags: ['Brand', 'Campaign'], art: 'art-d', span: 'span-8', crew: ['AL', 'BG', 'FT'], type: 'Branding' },
+      { client: 'Goldfinger', title: 'Coleção Primavera', tags: ['Campaign', 'Social'], art: 'art-e', span: 'span-5', crew: ['BI', 'AR'], type: 'Digital' },
+      { client: 'Prefeitura de Tremembé', title: 'Tremembé em Movimento', tags: ['Campaign', 'Public'], art: 'art-f', span: 'span-7', crew: ['CA', 'MS'], type: 'Campaign' }
     ];
 
     function Logo() {
@@ -1929,7 +1929,7 @@
             <div className="attention-list">
               <div className="attention-item">
                 <div className="attention-symbol">↗</div>
-                <div className="attention-copy"><strong>Johnson & Johnson está acima da capacidade</strong><span>Cliente em 108%. Carla concentra 8 jobs ativos.</span></div>
+                <div className="attention-copy"><strong>Johnson & Johnson está acima da capacidade</strong><span>Cliente em 108%. Alyne concentra 8 jobs ativos.</span></div>
                 <button className="tiny-link" onClick={() => askAgent('Como podemos aliviar o cliente J&J?')}>ver</button>
               </div>
               <div className="attention-item">
@@ -1944,8 +1944,8 @@
               </div>
               <div className="attention-item">
                 <div className="attention-symbol">+</div>
-                <div className="attention-copy"><strong>Bia está com capacidade livre</strong><span>42% comprometida. Boa candidata para novo job.</span></div>
-                <button className="tiny-link" onClick={() => askAgent('O que a Bia pode pegar hoje?')}>ver</button>
+                <div className="attention-copy"><strong>Gustavo está com capacidade livre</strong><span>42% comprometida. Boa candidata para novo job.</span></div>
+                <button className="tiny-link" onClick={() => askAgent('O que o Gustavo pode pegar hoje?')}>ver</button>
               </div>
             </div>
           </div>
@@ -2337,15 +2337,15 @@
     const botRules = [
       {
         test: q => /atenção|risco/i.test(q),
-        answer: "Hoje eu destacaria 3 pontos:\n\n• Cliente Johnson & Johnson em 108% de capacidade.\n• KV Café & Conversa vence hoje e ainda está em criação.\n• 3 jobs estão parados há mais de 48h.\n\nTambém há uma oportunidade: Bia está com 42% de carga."
+        answer: "Hoje eu destacaria 3 pontos:\n\n• Cliente Johnson & Johnson em 108% de capacidade.\n• KV Café & Conversa vence hoje e ainda está em criação.\n• 3 jobs estão parados há mais de 48h.\n\nTambém há uma oportunidade: Gustavo está com 42% de carga."
       },
       {
         test: q => /capacidade|pegar|disponibilidade|job novo/i.test(q),
-        answer: "A melhor disponibilidade agora é da Gustavo: 42% comprometida e nenhuma entrega hoje.\n\nJoão está em 55% e também pode absorver trabalho de redação. Eu evitaria Mauro (92%) e Carla (106%)."
+        answer: "A melhor disponibilidade agora é do Gustavo: 42% comprometida e nenhuma entrega hoje.\n\nCamila está em 55% e também pode absorver trabalho de redação. Eu evitaria Mauro (92%) e Alyne (106%)."
       },
       {
         test: q => /johnson|j&j|aliviar/i.test(q),
-        answer: "O cliente Johnson & Johnson está em 108%. O gargalo principal está em atendimento: Carla concentra 8 jobs e 3 entregas.\n\nSugestão: mover 1 job de coordenação simples para outro atendimento e evitar entrada de trabalhos L/XL hoje."
+        answer: "O cliente Johnson & Johnson está em 108%. O gargalo principal está em atendimento: Alyne concentra 8 jobs e 3 entregas.\n\nSugestão: mover 1 job de coordenação simples para outro atendimento e evitar entrada de trabalhos L/XL hoje."
       },
       {
         test: q => /parado/i.test(q),
@@ -2356,8 +2356,8 @@
         answer: "Sua carga está em 92%.\n\nEu priorizaria:\n1. KV Café & Conversa — entrega hoje.\n2. Carrossel ESG — revisão hoje.\n3. Semana do Vidro — bloco de produção depois das entregas.\n\nAdaptação OOH pode ir para amanhã sem impacto aparente."
       },
       {
-        test: q => /bia/i.test(q),
-        answer: "Bia está com 42% da capacidade comprometida, 2 jobs ativos e nenhuma entrega hoje. Ela parece ser a melhor opção para absorver um job S ou M agora."
+        test: q => /gustavo/i.test(q),
+        answer: "Gustavo está com 42% da capacidade comprometida, 2 jobs ativos e nenhuma entrega hoje. Ele parece ser a melhor opção para absorver um job S ou M agora."
       },
       {
         test: q => /cliente nsg/i.test(q),

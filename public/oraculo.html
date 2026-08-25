@@ -1944,8 +1944,8 @@
               </div>
               <div className="attention-item">
                 <div className="attention-symbol">+</div>
-                <div className="attention-copy"><strong>Ana está com capacidade livre</strong><span>42% comprometida. Boa candidata para novo job.</span></div>
-                <button className="tiny-link" onClick={() => askAgent('O que a Ana pode pegar hoje?')}>ver</button>
+                <div className="attention-copy"><strong>Bia está com capacidade livre</strong><span>42% comprometida. Boa candidata para novo job.</span></div>
+                <button className="tiny-link" onClick={() => askAgent('O que a Bia pode pegar hoje?')}>ver</button>
               </div>
             </div>
           </div>
@@ -2087,7 +2087,7 @@
           <div>
             <DateRangePicker range={range} setRange={setRange} />
             <h1>O que saiu da Verge.</h1>
-            <div className="sub">Uma visão visual do que os clientes colocaram no mundo — para a agência enxergar a própria produção.</div>
+            <div className="sub">Uma visão do que os estamos produzindo.</div>
           </div>
           <div className="status-pill">42 jobs finalizados</div>
         </div>
@@ -2337,7 +2337,7 @@
     const botRules = [
       {
         test: q => /atenção|risco/i.test(q),
-        answer: "Hoje eu destacaria 3 pontos:\n\n• Cliente Johnson & Johnson em 108% de capacidade.\n• KV Café & Conversa vence hoje e ainda está em criação.\n• 3 jobs estão parados há mais de 48h.\n\nTambém há uma oportunidade: Ana está com 42% de carga."
+        answer: "Hoje eu destacaria 3 pontos:\n\n• Cliente Johnson & Johnson em 108% de capacidade.\n• KV Café & Conversa vence hoje e ainda está em criação.\n• 3 jobs estão parados há mais de 48h.\n\nTambém há uma oportunidade: Bia está com 42% de carga."
       },
       {
         test: q => /capacidade|pegar|disponibilidade|job novo/i.test(q),
@@ -2356,8 +2356,8 @@
         answer: "Sua carga está em 92%.\n\nEu priorizaria:\n1. KV Café & Conversa — entrega hoje.\n2. Carrossel ESG — revisão hoje.\n3. Semana do Vidro — bloco de produção depois das entregas.\n\nAdaptação OOH pode ir para amanhã sem impacto aparente."
       },
       {
-        test: q => /ana/i.test(q),
-        answer: "Ana está com 42% da capacidade comprometida, 2 jobs ativos e nenhuma entrega hoje. Ela parece ser a melhor opção para absorver um job S ou M agora."
+        test: q => /bia/i.test(q),
+        answer: "Bia está com 42% da capacidade comprometida, 2 jobs ativos e nenhuma entrega hoje. Ela parece ser a melhor opção para absorver um job S ou M agora."
       },
       {
         test: q => /cliente nsg/i.test(q),

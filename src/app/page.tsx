@@ -89,7 +89,7 @@ export default function Home() {
 
         <HowIWork />
 
-        <Experience />
+        {/*<Experience />*/}
 
         <MyLab />
 

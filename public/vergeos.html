@@ -297,6 +297,34 @@
       background: #fafaf7;
     }
 
+    .topbar-left {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .hamburger-btn {
+      display: none;
+      width: 38px;
+      height: 38px;
+      align-items: center;
+      justify-content: center;
+      border-radius: 11px;
+      border: 1px solid var(--line);
+      background: var(--panel);
+      color: var(--ink);
+      font-size: 16px;
+      flex: 0 0 auto;
+    }
+
+    .sidebar-backdrop {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(10, 10, 8, .45);
+      z-index: 19;
+    }
+
     .content {
       padding: 26px;
       max-width: 1600px;
@@ -1689,33 +1717,30 @@
 
     @media (max-width: 800px) {
       .app {
-        grid-template-columns: 72px minmax(0, 1fr);
+        grid-template-columns: minmax(0, 1fr);
+      }
+
+      .hamburger-btn {
+        display: inline-flex;
+      }
+
+      .sidebar-backdrop {
+        display: block;
       }
 
       .sidebar {
-        width: 72px;
-        padding: 14px 9px;
+        width: 240px;
+        transform: translateX(-100%);
+        transition: transform .22s ease;
+        box-shadow: 30px 0 60px rgba(0, 0, 0, .28);
       }
 
-      .brand-copy,
-      .nav-button span,
-      .mini-profile div:last-child {
-        display: none;
-      }
-
-      .brand {
-        justify-content: center;
-        padding-left: 0;
-        padding-right: 0;
-      }
-
-      .nav-button {
-        justify-content: center;
-        padding: 11px 0;
+      .sidebar.mobile-open {
+        transform: translateX(0);
       }
 
       .main {
-        grid-column: 2;
+        grid-column: 1;
       }
 
       .search {
@@ -1746,7 +1771,7 @@
       }
 
       .chat-panel {
-        inset: 78px 10px 10px 82px;
+        inset: 78px 10px 10px 10px;
         width: auto;
       }
 
@@ -1822,12 +1847,12 @@
       </div>
     }
 
-    function Sidebar({ page, setPage }) {
-      return <aside className="sidebar">
+    function Sidebar({ page, setPage, navOpen, onNavigate }) {
+      return <aside className={'sidebar ' + (navOpen ? 'mobile-open' : '')}>
         <Logo />
         <div className="nav">
           {nav.map(item =>
-            <button key={item.id} className={'nav-button ' + (page === item.id ? 'active' : '')} onClick={() => setPage(item.id)}>
+            <button key={item.id} className={'nav-button ' + (page === item.id ? 'active' : '')} onClick={() => { setPage(item.id); onNavigate && onNavigate(); }}>
               <div className="nav-icon">{item.icon}</div><span>{item.label}</span>
             </button>
           )}
@@ -1841,10 +1866,13 @@
       </aside>
     }
 
-    function Topbar({ page }) {
+    function Topbar({ page, onToggleNav }) {
       const label = nav.find(item => item.id === page)?.label || '';
       return <div className="topbar">
-        <div className="page-label"><small>Verge</small><strong>/ {label}</strong></div>
+        <div className="topbar-left">
+          <button type="button" className="hamburger-btn" aria-label="Abrir menu" onClick={onToggleNav}>☰</button>
+          <div className="page-label"><small>Verge</small><strong>/ {label}</strong></div>
+        </div>
         <div className="top-actions">
           <div className="search">⌕ <input placeholder="Buscar jobs, pessoas ou arquivos..." /></div>
         </div>
@@ -2254,9 +2282,8 @@
       return <>
         <div className="hero-row">
           <div>
-            <div className="eyebrow">Tráfego</div>
-            <h1>Um quadro, três lentes.</h1>
-            <div className="sub">O mesmo Kanban, com três recortes: seus jobs, um cliente específico ou a agência inteira.</div>
+            <div className="eyebrow">O que está rolando</div>
+            <h1>Jobs</h1>
           </div>
           <button className="primary-btn">+ Novo job</button>
         </div>
@@ -2281,7 +2308,6 @@
           <div>
             <div className="eyebrow">Equipe</div>
             <h1>Quem está fazendo o quê.</h1>
-            <div className="sub">Capacidade, jobs e composição dos clientes em uma visão só.</div>
           </div>
           <button className="primary-btn" onClick={() => askAgent('Quem pode pegar um job novo agora?')}>Encontrar disponibilidade</button>
         </div>
@@ -2437,7 +2463,8 @@
 
     function App() {
       const [page, setPage] = useState('overview');
-      const [chatOpen, setChatOpen] = useState(true);
+      const [navOpen, setNavOpen] = useState(false);
+      const [chatOpen, setChatOpen] = useState(() => typeof window !== 'undefined' ? window.innerWidth > 800 : true);
       const [seedQuestion, setSeedQuestion] = useState('');
       const [toastText, setToastText] = useState('');
 
@@ -2452,9 +2479,10 @@
       }
 
       return <div className="app">
-        <Sidebar page={page} setPage={setPage} />
+        <Sidebar page={page} setPage={setPage} navOpen={navOpen} onNavigate={() => setNavOpen(false)} />
+        {navOpen && <div className="sidebar-backdrop" onClick={() => setNavOpen(false)} />}
         <main className="main">
-          <Topbar page={page} />
+          <Topbar page={page} onToggleNav={() => setNavOpen(v => !v)} />
           <div className={'content ' + (chatOpen ? 'with-chat' : '')}>
             {page === 'overview' && <Overview askAgent={askAgent} />}
             {page === 'week' && <Week />}

@@ -468,7 +468,7 @@
     }
 
     h1 {
-      font-size: clamp(28px, 3vw, 44px);
+      font-size: clamp(28px, 3vw, 32px);
       margin: 0;
       letter-spacing: -.045em;
       line-height: .98;
@@ -1775,7 +1775,7 @@
       { name: 'Mauro José', role: 'Direção de Arte', squad: 'NSG', cap: 92, jobs: 6, due: 2, initials: 'MJ', skills: ['Branding', 'Digital', 'AI'] },
       { name: 'Gustavo', role: 'Direção de Arte', squad: 'Unimed', cap: 42, jobs: 2, due: 0, initials: 'GU', skills: ['Social', 'Campaign', 'Motion'] },
       { name: 'Luis', role: 'Redação', squad: 'NSG', cap: 78, jobs: 5, due: 1, initials: 'LU', skills: ['Copy', 'Concept', 'Social'] },
-      { name: 'Alyne', role: 'Atendimento', squad: 'J&J', cap: 106, jobs: 8, due: 3, initials: 'AL', skills: ['Client', 'Planning'] },
+      { name: 'Carol', role: 'Redação', squad: 'Kenvue', cap: 106, jobs: 8, due: 3, initials: 'CA', skills: ['Copy', 'Concept'] },
       { name: 'Bia', role: 'Direção de Arte', squad: 'Goldfinger', cap: 63, jobs: 4, due: 1, initials: 'BI', skills: ['Campaign', 'Digital', 'Branding'] },
       { name: 'Camila', role: 'Redação', squad: 'Tremembé', cap: 55, jobs: 3, due: 1, initials: 'CA', skills: ['Script', 'Copy', 'Strategy'] }
     ];
@@ -1783,7 +1783,7 @@
     const squads = [
       { name: 'NSG', client: 'NSG Group', cap: 87, jobs: 14, members: ['MJ', 'LU', 'RC'] },
       { name: 'Unimed', client: 'Unimed', cap: 64, jobs: 9, members: ['GU', 'MB', 'RF'] },
-      { name: 'J&J', client: 'Johnson & Johnson', cap: 108, jobs: 12, members: ['AL', 'FT', 'BG'] },
+      { name: 'J&J', client: 'Johnson & Johnson', cap: 108, jobs: 12, members: ['CA', 'FT', 'BG'] },
       { name: 'Goldfinger', client: 'Goldfinger', cap: 72, jobs: 8, members: ['BI', 'AR', 'GV'] },
       { name: 'Tremembé', client: 'Prefeitura de Tremembé', cap: 58, jobs: 7, members: ['CA', 'MS', 'TP'] }
     ];
@@ -1794,13 +1794,13 @@
       { id: 1, title: 'KV Café & Conversa', client: 'NSG', owner: 'MJ', size: 'L', priority: 'high', due: 'Hoje', status: 'Criacao', squad: 'NSG' },
       { id: 2, title: 'Carrossel ESG — Ajustes', client: 'NSG', owner: 'MJ', size: 'M', priority: 'medium', due: 'Hoje', status: 'Revisao', squad: 'NSG' },
       { id: 3, title: 'Campanha Vacinação', client: 'Unimed', owner: 'GU', size: 'L', priority: 'high', due: 'Qua', status: 'Criacao', squad: 'Unimed' },
-      { id: 4, title: 'Manifesto de Marca', client: 'J&J', owner: 'AL', size: 'L', priority: 'medium', due: 'Qui', status: 'Briefing', squad: 'J&J' },
+      { id: 4, title: 'Manifesto de Marca', client: 'J&J', owner: 'CA', size: 'L', priority: 'medium', due: 'Qui', status: 'Briefing', squad: 'J&J' },
       { id: 5, title: 'Adaptação OOH', client: 'NSG', owner: 'MJ', size: 'S', priority: 'low', due: 'Sex', status: 'Entrada', squad: 'NSG' },
       { id: 6, title: 'Social Kit Agosto', client: 'Goldfinger', owner: 'BI', size: 'M', priority: 'low', due: 'Sex', status: 'Cliente', squad: 'Goldfinger' },
       { id: 7, title: 'Campanha Aniversário da Cidade', client: 'Tremembé', owner: 'CA', size: 'L', priority: 'high', due: 'Amanhã', status: 'Revisao', squad: 'Tremembé' },
       { id: 8, title: 'Campanha Segurança', client: 'NSG', owner: 'LU', size: 'L', priority: 'medium', due: 'Qui', status: 'Cliente', squad: 'NSG' },
       { id: 9, title: 'Newsletter Saúde', client: 'Unimed', owner: 'GU', size: 'S', priority: 'low', due: 'Sex', status: 'Entrada', squad: 'Unimed' },
-      { id: 10, title: 'Deck Institucional', client: 'J&J', owner: 'AL', size: 'M', priority: 'medium', due: 'Qua', status: 'Briefing', squad: 'J&J' },
+      { id: 10, title: 'Deck Institucional', client: 'J&J', owner: 'CA', size: 'M', priority: 'medium', due: 'Qua', status: 'Briefing', squad: 'J&J' },
       { id: 11, title: 'Semana do Vidro', client: 'NSG', owner: 'MJ', size: 'XL', priority: 'high', due: 'Sex', status: 'Criacao', squad: 'NSG' },
       { id: 12, title: 'Campanha Institucional', client: 'Goldfinger', owner: 'BI', size: 'M', priority: 'medium', due: 'Qui', status: 'Criacao', squad: 'Goldfinger' },
       { id: 13, title: 'Prestação de Contas 2026', client: 'Tremembé', owner: 'CA', size: 'M', priority: 'medium', due: 'Sex', status: 'Briefing', squad: 'Tremembé' }
@@ -1810,7 +1810,7 @@
       { client: 'NSG Group', title: 'Future of Glass — Employer Branding', tags: ['Campaign', 'OOH', 'Social'], art: 'art-a', span: 'span-7', crew: ['MJ', 'LU', 'RC'], type: 'Campaign' },
       { client: 'NSG Group', title: 'Café & Conversa', tags: ['Identity', 'Event'], art: 'art-b', span: 'span-5', crew: ['GU', 'LU'], type: 'Branding' },
       { client: 'Unimed', title: 'Cuidar Faz Bem', tags: ['Campaign', 'Digital'], art: 'art-c', span: 'span-4', crew: ['GU', 'RF'], type: 'Digital' },
-      { client: 'Johnson & Johnson', title: 'Science Meets Care', tags: ['Brand', 'Campaign'], art: 'art-d', span: 'span-8', crew: ['AL', 'BG', 'FT'], type: 'Branding' },
+      { client: 'Johnson & Johnson', title: 'Science Meets Care', tags: ['Brand', 'Campaign'], art: 'art-d', span: 'span-8', crew: ['CA', 'BG', 'FT'], type: 'Branding' },
       { client: 'Goldfinger', title: 'Coleção Primavera', tags: ['Campaign', 'Social'], art: 'art-e', span: 'span-5', crew: ['BI', 'AR'], type: 'Digital' },
       { client: 'Prefeitura de Tremembé', title: 'Tremembé em Movimento', tags: ['Campaign', 'Public'], art: 'art-f', span: 'span-7', crew: ['CA', 'MS'], type: 'Campaign' }
     ];
@@ -1898,18 +1898,17 @@
       return <>
         <div className="hero-row">
           <div>
-            <div className="eyebrow">Segunda, 24 de agosto</div>
-            <h1>Hoje na Verge.</h1>
-            <div className="sub">Um retrato rápido do fluxo de jobs, capacidade e pontos que precisam de atenção.</div>
+            <div className="eyebrow">Semana 34 </div>
+            <h1>24 - 28 de Agosto</h1>
           </div>
           <div className="status-pill"><span className="dot" />Dados atualizados há 4 min</div>
         </div>
 
         <div className="metric-grid">
-          <Metric label="Jobs ativos" value="54" foot="vs. semana passada" delta="+8%" featured />
-          <Metric label="Entregas nesta semana" value="28" foot="12 já concluídas" delta="43%" />
-          <Metric label="Precisam de atenção" value="5" foot="3 bloqueados · 2 em risco" delta="ver agora" danger />
-          <Metric label="Capacidade da agência" value="79%" foot="2 pessoas acima de 100%" delta="+4%" />
+          <Metric label="Entradas da semana" value="54" foot="vs. semana passada" delta="+8%" featured />
+          <Metric label="Entregas da semana" value="28" foot="vs. semana passada" delta="+23%" />
+          <Metric label="Atrasados" value="5" foot="vs semana passada" delta="-20%" danger />
+          <Metric label="Capacidade da agência" value="79%" foot="2 pessoas acima de 100%" />
         </div>
 
         <div className="dashboard-grid">
@@ -1921,7 +1920,7 @@
             <LineChart />
           </div>
 
-          <div className="panel panel-pad">
+          {/*<div className="panel panel-pad">
             <div className="panel-head">
               <div><div className="panel-title">Precisa de atenção</div><div className="panel-sub">Sinais levantados pelo Oráculo</div></div>
               <button className="tiny-link" onClick={() => askAgent('O que precisa de atenção hoje?')}>Perguntar</button>
@@ -1948,11 +1947,18 @@
                 <button className="tiny-link" onClick={() => askAgent('O que o Gustavo pode pegar hoje?')}>ver</button>
               </div>
             </div>
+          </div>*/}
+          <div className="panel panel-pad">
+            <div className="panel-head">
+              <div><div className="panel-title">Capacidade agora</div><div className="panel-sub">Carga estimada da equipe criativa</div></div>
+              {/*<button className="tiny-link" onClick={() => askAgent('Quem tem capacidade para um job novo?')}>Quem pode pegar job?</button>*/}
+            </div>
+            <CapacityBars />
           </div>
         </div>
 
-        <div className="dashboard-grid">
-          <div className="panel panel-pad">
+        <div className="dashboard-grid" >
+          <div className="panel panel-pad" style={{ gridColumn: "1 / -1" }}>
             <div className="panel-head">
               <div><div className="panel-title">Onde estão os jobs agora</div><div className="panel-sub">Distribuição por estágio</div></div>
             </div>
@@ -1963,13 +1969,7 @@
             </div>
           </div>
 
-          <div className="panel panel-pad">
-            <div className="panel-head">
-              <div><div className="panel-title">Capacidade agora</div><div className="panel-sub">Carga estimada da equipe criativa</div></div>
-              <button className="tiny-link" onClick={() => askAgent('Quem tem capacidade para um job novo?')}>Quem pode pegar job?</button>
-            </div>
-            <CapacityBars />
-          </div>
+
         </div>
       </>
     }
@@ -2086,10 +2086,10 @@
         <div className="hero-row">
           <div>
             <DateRangePicker range={range} setRange={setRange} />
-            <h1>O que saiu da Verge.</h1>
-            <div className="sub">Uma visão do que os estamos produzindo.</div>
+            <h1>O que saiu da Verge esta semana.</h1>
+            {/* <div className="sub">Uma visão do que os estamos produzindo.</div> */}
           </div>
-          <div className="status-pill">42 jobs finalizados</div>
+          <div className="status-pill">28 jobs entregues</div>
         </div>
 
         <div className="toolbar">
@@ -2341,11 +2341,11 @@
       },
       {
         test: q => /capacidade|pegar|disponibilidade|job novo/i.test(q),
-        answer: "A melhor disponibilidade agora é do Gustavo: 42% comprometida e nenhuma entrega hoje.\n\nCamila está em 55% e também pode absorver trabalho de redação. Eu evitaria Mauro (92%) e Alyne (106%)."
+        answer: "A melhor disponibilidade agora é do Gustavo: 42% comprometida e nenhuma entrega hoje.\n\nCamila está em 55% e também pode absorver trabalho de redação. Eu evitaria Mauro (92%) e Carol (106%)."
       },
       {
         test: q => /johnson|j&j|aliviar/i.test(q),
-        answer: "O cliente Johnson & Johnson está em 108%. O gargalo principal está em atendimento: Alyne concentra 8 jobs e 3 entregas.\n\nSugestão: mover 1 job de coordenação simples para outro atendimento e evitar entrada de trabalhos L/XL hoje."
+        answer: "O cliente Johnson & Johnson está em 108%. O gargalo principal está em atendimento: Carol concentra 8 jobs e 3 entregas.\n\nSugestão: passar 1 job para o Luis"
       },
       {
         test: q => /parado/i.test(q),

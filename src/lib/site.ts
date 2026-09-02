@@ -10,6 +10,7 @@ const SITE = {
   whatsapp: "https://wa.me/5512988147485",
   linkedin: "https://linkedin.com/in/maurojose",
   github: "https://github.com/maurojose",
+  gaId: "G-Q1D015ZX18",
 } as const;
 
 const SAME_AS: string[] = [SITE.linkedin, SITE.github];

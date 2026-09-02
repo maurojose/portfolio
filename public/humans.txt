@@ -1,0 +1,8 @@
+/* TEAM */
+Designer & Developer: Mauro José Soares
+Contact: maurojsoares@gmail.com
+LinkedIn: https://linkedin.com/in/maurojose
+Site: https://www.maurojota.com
+
+/* SITE */
+Built with: Next.js, TypeScript, Tailwind CSS, Vercel

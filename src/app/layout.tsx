@@ -2,6 +2,7 @@ import type { Metadata, Viewport } from "next";
 import { Figtree, Inter } from "next/font/google";
 import "./globals.css";
 import {Navbar} from "../components/navbar";
+import { GoogleAnalytics } from "../components/googleAnalytics";
 import { SITE } from "@/lib/site";
 
 const figtree = Figtree({
@@ -81,6 +82,7 @@ export default function RootLayout({
       >
         <Navbar/>
         <main className="flex flex-col items-center w-full">{children}</main>
+        <GoogleAnalytics />
       </body>
     </html>
   );

@@ -1,0 +1,24 @@
+# Mauro José Soares
+
+> Product Designer with 14+ years of experience across visual, UX, and
+> product design. Works across the full design process, from early
+> direction and flows to implementation and delivery.
+
+## About
+Mauro is a multidisciplinary designer who works end-to-end, from strategy
+and interaction design through hands-on implementation. Primary stack:
+Next.js, TypeScript, Node.js. Primary design tool: Figma.
+
+## Featured work
+- rakoon.fun — Radix token launchpad. Branding, interaction design and
+  product strategy. ~$50k transaction volume, 200+ tokens launched,
+  ~600 unique active wallets.
+- dEXTER — order-book DEX on Radix. UX/UI redesign and design system.
+  35% faster order flow, 50% fewer input errors, 90% clearer trading
+  dashboards.
+
+## Contact
+Email: maurojsoares@gmail.com
+LinkedIn: https://linkedin.com/in/maurojose
+GitHub: https://github.com/maurojose
+Site: https://www.maurojota.com
